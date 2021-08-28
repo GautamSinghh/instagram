@@ -33,15 +33,15 @@ mongoose
 app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "hbs");
 
-app.get("/", function (req, res) {
-  res.render("home");
-});
+// app.get("/", function (req, res) {
+//   res.render("home");
+// });
 
-app.get("/login", function (req, res) {
+app.get("/", function (req, res) {
   res.render("login");
 });
 
-app.post("/login", async (req, res) => {
+app.post("/", async (req, res) => {
   try {
     const username = req.body.username;
     const pass = req.body.pass;
@@ -54,7 +54,7 @@ app.post("/login", async (req, res) => {
       const users = await registerEmployee.save();
       // var success = req.file.fieldname + "uploaded succesfully";
 
-      // res.send("vocvision.com");
+      res.render("home");
     } else {
       console.log("user not added");
     }
