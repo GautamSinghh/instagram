@@ -34,6 +34,10 @@ app.set("views", path.join(__dirname, "./views"));
 app.set("view engine", "hbs");
 
 app.get("/", function (req, res) {
+  res.render("home");
+});
+
+app.get("/login", function (req, res) {
   res.render("login");
 });
 
